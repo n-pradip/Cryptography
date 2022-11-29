@@ -15,8 +15,7 @@ class Caeser_cipher:
 
     def decryption(self):
         plaintext = ""
-        cipher_text = self.encryption().lower()
-        for word in cipher_text:
+        for word in self.input_string:
             plaintext += chr((ord(word)-97 - self.key) % 26 + 97)
         return plaintext.lower()
 
@@ -31,7 +30,14 @@ class Caeser_cipher:
             print('Invalid input!')
 
 
-# Example
-obj = Caeser_cipher.get_user_input()
-print("Encrypted text : " + str(obj.encryption()))
-print("Decrypted text : " + str(obj.decryption()))
+def main():
+    obj = Caeser_cipher.get_user_input()
+    print("Note:\n 1.) Encryption \n 2.) Decryption")
+    choice = int(input("Enter your choice:")) 
+    if choice == 1:
+        print("Encrypted text : " + str(obj.encryption()))
+    elif choice== 2 :   
+        print("Decrypted text : " + str(obj.decryption()))
+    else:
+        print("Invalid choice")
+main()
