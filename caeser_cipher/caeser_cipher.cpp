@@ -16,7 +16,6 @@ class Caeser_cipher{
 		}
 		
 		string decryption(){
-			int holder;
 			for(i=0;i<input_string.length();i++){
 				encrypted_char = char(((((tolower(input_string[i])-97 - key) % 26)+ 26)% 26) + 97);
 				input_string[i] = encrypted_char;	
